@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   source:
-    path: applications/argocd/
+    path: IAC/kubernetes/applications/argocd/
     repoURL: git@github.com:mr0xb/homelab.git
     targetRevision: HEAD
   destination:
