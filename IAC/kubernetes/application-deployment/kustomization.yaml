@@ -4,4 +4,3 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-  - argocd/argocd-app.yaml
