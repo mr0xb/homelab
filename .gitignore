@@ -1,0 +1,10 @@
+*.asc
+id_rsa
+id_rsa.pub
+id_rsa*
+*id_rsa
+*.sops.unenc.yaml
+*.sops.unenc.*
+*.key
+*.old
+*.bak
