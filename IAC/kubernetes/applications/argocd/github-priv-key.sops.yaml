@@ -1,0 +1,8 @@
+apiVersion: goabout.com/v1beta1
+kind: SopsSecretGenerator
+metadata:
+  name: ssh-key
+type: Opaque
+files:
+  - ../../secrets/id_rsa
+  - ../../secrets/id_rsa.pub
