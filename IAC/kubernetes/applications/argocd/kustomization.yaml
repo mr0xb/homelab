@@ -5,16 +5,13 @@ namespace: argocd
 
 resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.0/manifests/install.yaml
-  #- ingress.yaml
-  #- services.yaml
   - namespace.yaml
-
+  - nodeport.yaml
+  - ../../application-deployment
 patches:
   - statefulset.yaml
   - configmap.yaml
   - sopsSecretsGenerator.yaml
-
-patchesStrategicMerge:
   - import-gpg-key.yaml
 
 generators:

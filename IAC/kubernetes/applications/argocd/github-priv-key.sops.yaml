@@ -2,7 +2,11 @@ apiVersion: goabout.com/v1beta1
 kind: SopsSecretGenerator
 metadata:
   name: ssh-key
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repo-creds
 type: Opaque
 files:
   - ../../secrets/id_rsa
   - ../../secrets/id_rsa.pub
+disableNameSuffixHash: true

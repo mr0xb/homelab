@@ -9,12 +9,19 @@ data:
   # https://argo-cd.readthedocs.io/en/release-2.4/faq/#why-is-my-application-still-outofsync-immediately-after-a-successful-sync
   # https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml#L235
   application.instanceLabelKey: argocd.argoproj.io/instance
-  repository.credentials: |
-    - sshPrivateKeySecret:
-        key: id_rsa
-        name: ssh-key
+  #repository.credentials: |
+  #  - sshPrivateKeySecret:
+  #      name: ssh-key
+  #      key: id_rsa
+  #    url: git@github.com:mr0xb/homelab.git
+  #    path: IAC/application-deployment
+  repositories: |
+    - name: github-app-deploy
       url: git@github.com:mr0xb/homelab.git
-      path: IAC/application-deployment
+      type: git
+      sshPrivateKeySecret:
+        name: ssh-key
+        key: id_rsa
 ---
 apiVersion: v1
 kind: ConfigMap
